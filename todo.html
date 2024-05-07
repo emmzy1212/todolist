@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        #todo-list {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #todo-list h2 {
+            text-align: center;
+        }
+
+        #task {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+        <div id="todo-list">
+                <h2>To-Do List</h2>
+                <input type="text" id="taskInput" placeholder="Enter a Task...">
+                <button onclick="addTask()">Add Task</button>
+                <ul id="task"></ul>
+            </div>
+
+        <script>
+                function addTask () {
+                    var taskInput = document.getElementById("taskInput");
+                    var taskText = taskInput.value;
+                    if (taskText.trim () === "") {
+                        alert("please enter a task");
+                    }
+            
+                    var taskList = document.getElementById("task");
+                    var li = document.createElement("li");
+                    li.textContent = taskText;
+                    taskList. appendChild(li);
+            
+                    taskInput.value ="";
+                }
+            </script>
+    
+</body>
+</html>
